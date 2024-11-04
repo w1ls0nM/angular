@@ -1,1 +1,21 @@
 <p>hello-word works!</p>
+<h1>{{meuNome}}</h1>
+<!-- <p style="color: brown;">{{mensagem}}</p> -->
+<!-- <p [style]="'color:' + corTexto">{{mensagem}}</p> -->
+ <!-- <div>
+    <button type="button" (click)="corTexto='red'">Clicar</button>
+ </div> -->
+ 
+ <div>
+    <button type="button" (click)="mostrarMensagem()">Clicar</button>
+ </div>
+<p [style.color]="corTexto">{{mensagem}}</p>
+
+<!-- <img src="{{imagem}}"> -->
+
+<!-- good pratric -->
+<img [src]="imagem">
+<div>
+    {{num +10}}
+</div>
+
