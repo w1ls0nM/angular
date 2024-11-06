@@ -1,44 +1,69 @@
-
-<nav>
-    <ul>
-        <li>
-            <a href="/hello-world">hello word rout</a>
+<div style="font-family: Arial, sans-serif; padding: 20px;">
+    <!-- Primeira Navegação -->
+    <nav style="margin-bottom: 15px;">
+      <ul style="list-style: none; padding: 0;">
+        <li style="display: inline; margin-right: 15px;">
+          <a href="/hello-world" style="text-decoration: none; color: #007bff;">Hello Word Route</a>
         </li>
-        <li>
-            <a href="/contador">contador</a>
+        <li style="display: inline; margin-right: 15px;">
+          <a href="/contador" style="text-decoration: none; color: #007bff;">Contador</a>
         </li>
-    </ul>
-</nav>
-
-<br>
-<nav>
-    <ul>
-        <li>
-            <a  routerLink="/hello-world" routerLinkActive="linkAtivo">hello word rout</a>
+      </ul>
+    </nav>
+  
+    <br>
+  
+    <!-- Segunda Navegação com routerLink -->
+    <nav style="margin-bottom: 20px;">
+      <ul style="list-style: none; padding: 0;">
+        <li style="display: inline; margin-right: 15px;">
+          <a routerLink="/hello-word" routerLinkActive="linkAtivo" style="text-decoration: none; color: #007bff;">
+            Hello Word Route
+          </a>
         </li>
-        
-        <li>
-            <a  routerLink="/contador" routerLinkActive="linkAtivo" >contador</a>
+        <li style="display: inline; margin-right: 15px;">
+          <a routerLink="/contador" routerLinkActive="linkAtivo" style="text-decoration: none; color: #007bff;">
+            Contador
+          </a>
         </li>
-        <li>
-            <a  routerLink="/ngIf" routerLinkActive="linkAtivo" >IF</a>
+        <li style="display: inline; margin-right: 15px;">
+          <a routerLink="/ngIf" routerLinkActive="linkAtivo" style="text-decoration: none; color: #007bff;">
+            IF
+          </a>
         </li>
-        <li>
-            <a  routerLink="/ngloop" routerLinkActive="linkAtivo" >LOOP</a>
+        <li style="display: inline; margin-right: 15px;">
+          <a routerLink="/ngloop" routerLinkActive="linkAtivo" style="text-decoration: none; color: #007bff;">
+            LOOP
+          </a>
         </li>
-    </ul>
-</nav>
-<router-outlet/>
-<p>hello word</p>
-<p>hello world 2</p>
-<!-- <app-hello-word></app-hello-word> -->
- 
- <!-- version 17 up -->
-<!-- <app-hello-word/> -->
-
-<!-- <app-hello-word meuNome="Melo"/> -->
-<app-hello-word [meuNome]="nomeDinamico"/>
-<!-- [] - receber info () - emitir info -->
-<app-contador (foiAlterado)="quandoFoiAlterado($event)"/>
-<p>Contador Pai:</p>
- <b>:{{contadorPai}}</b>
+      </ul>
+    </nav>
+  
+    <!-- Saída do Roteador -->
+    <router-outlet></router-outlet>
+  
+    <!-- Parágrafos de Teste -->
+    <!-- <p style="color: #333;">Hello Word</p>
+    <p style="color: #333;">Hello World 2</p>
+   -->
+    <!-- Componente Comentado -->
+    <!-- <app-hello-word></app-hello-word> -->
+     
+    <!-- versão 17+ -->
+    <!-- <app-hello-word/> -->
+  
+    <!-- Componente com Propriedade Estática -->
+    <!-- <app-hello-word meuNome="Melo"/> -->
+  
+    <!-- Componente com Propriedade Dinâmica -->
+    <app-hello-word [meuNome]="nomeDinamico"></app-hello-word>
+  
+    <!-- Componente com Emissão de Evento -->
+    <!-- [] - receber info () - emitir info -->
+    <!-- <app-contador (foiAlterado)="quandoFoiAlterado($event)"></app-contador> -->
+  
+    <!-- Contador Pai -->
+    <!-- <p style="font-weight: bold; margin-top: 15px;">Contador Pai:</p>
+    <b style="font-size: 1.2em; color: #555;">:{{contadorPai}}</b> -->
+  </div>
+  

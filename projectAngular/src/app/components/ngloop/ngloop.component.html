@@ -1,42 +1,43 @@
-<p>ngloop works!</p>
-<h1>Loops</h1>
-
-<h2>*ngFor</h2>
-<div>
-    <h3>numeros</h3>
-    <ul>
-        <li *ngFor="let item of arr">
+<div style="font-family: Arial, sans-serif; padding: 20px;">
+    <p style="color: green; font-size: 1.2em; margin-bottom: 10px;">ngloop works!</p>
+    <h1 style="color: #333; border-bottom: 2px solid #ddd; padding-bottom: 5px;">Loops</h1>
+  
+    <section style="margin-top: 20px;">
+      <h2 style="color: #555;">*ngFor</h2>
+  
+      
+      <div style="margin: 10px 0;">
+        <h3 style="color: #888;">Números</h3>
+        <ul style="list-style-type: circle; padding-left: 20px;">
+          <li *ngFor="let item of arr" style="margin: 5px 0;">
             {{item}}
-        </li>
-    </ul>
-</div>
-<div>
-    <h3>fruta</h3>
-    <ul>
-        <li *ngFor="let fruta of frutas; last as ultimo">
-            
-        
-            @if(ultimo){
-                <p style="color: brown;">{{fruta}}</p>
-            }@else {
-                <p>{{fruta}}:{{ultimo}} </p>
-            }
-        </li>
-    </ul>
-</div>
-
-<div>
-    <h3>arroba fruta</h3>
-    <ul>
-        @for (fruta of frutas; track $index) {
-            <li>
-                @if($last){
-                    <p style="color: brown;">{{fruta}}</p>
-                }@else {
-                    <p>{{fruta}}:{{$last}} </p>
-                }
+          </li>
+        </ul>
+      </div>
+  
+      
+      <div style="margin: 10px 0;">
+        <h3 style="color: #888;">Frutas</h3>
+        <ul style="list-style-type: square; padding-left: 20px;">
+          <li *ngFor="let fruta of frutas; last as ultimo" style="margin: 5px 0;">
+            <p [style.color]="ultimo ? 'brown' : 'black'">{{ fruta }} {{ ultimo ? '' : ': ' + ultimo }}</p>
+          </li>
+        </ul>
+      </div>
+  
+      
+      <div style="margin: 10px 0;">
+        <h3 style="color: #888;">Arroba Fruta</h3>
+        <ul style="list-style-type: disc; padding-left: 20px;">
+          <ng-container *ngFor="let fruta of frutas; index as i; last as $last">
+            <li style="margin: 5px 0;">
+              <p [style.color]="$last ? 'brown' : 'black'">
+                {{ fruta }} {{ !$last ? ': ' + $last : '' }}
+              </p>
             </li>
-        }
-        
-    </ul>
-</div>
+          </ng-container>
+        </ul>
+      </div>
+    </section>
+  </div>
+  

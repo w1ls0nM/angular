@@ -1,22 +1,31 @@
-<p>hello-word works!</p>
-<h1>{{meuNome}}</h1>
-<!-- <p style="color: brown;">{{mensagem}}</p> -->
- <!-- property buide [] -->
-<!-- <p [style]="'color:' + corTexto">{{mensagem}}</p> -->
- <!-- <div>
-    <button type="button" (click)="corTexto='red'">Clicar</button>
- </div> -->
+<div style="font-family: Arial, sans-serif; padding: 20px;">
+   <p style="color: green; font-size: 1.2em; margin-bottom: 10px;">hello-word works!</p>
  
- <div>
-    <button type="button" (click)="mostrarMensagem()">Clicar</button>
+   <h1 style="color: #333;">{{meuNome}}</h1>
+ 
+   <!-- <p style="color: brown;">{{mensagem}}</p> -->
+   <!-- property binding [] -->
+   <!-- <p [style]="'color:' + corTexto">{{mensagem}}</p> -->
+ 
+   <div style="margin: 10px 0;">
+     <!-- Botão alterando cor diretamente -->
+     <!-- <button type="button" (click)="corTexto='red'">Clicar</button> -->
+     
+     <!-- Botão que chama mostrarMensagem() -->
+     <button type="button" (click)="mostrarMensagem()" style="padding: 8px 16px; font-size: 1em;">
+       Clicar
+     </button>
+   </div>
+ 
+   <p [style.color]="corTexto" style="font-size: 1.1em; margin: 10px 0;">{{mensagem}}</p>
+ 
+   <!-- <img src="{{imagem}}"> -->
+   
+   <!-- Good practice for property binding -->
+   <img [src]="imagem" alt="Imagem gerada" style="border: 1px solid #ddd; margin: 10px 0;">
+ 
+   <div style="margin-top: 10px; font-weight: bold;">
+     {{ num + 10 }}
+   </div>
  </div>
-<p [style.color]="corTexto">{{mensagem}}</p>
-
-<!-- <img src="{{imagem}}"> -->
-
-<!-- good pratric -->
-<img [src]="imagem">
-<div>
-    {{num +10}}
-</div>
-
+ 
