@@ -11,7 +11,7 @@ import { Component, Input } from '@angular/core';
 export class HelloWordComponent {
   @Input() meuNome = 'wilson';
   mensagem = 'batata';
-  imagem = 'https://blog.pareto.io/wp-content/uploads/2023/09/ia-que-cria-imagens-header.png';
+  imagem = this.getRandomImg();
 
   num =10;
 
@@ -19,7 +19,8 @@ export class HelloWordComponent {
 
   mostrarMensagem(){
     this.corTexto = this.getRandomColor();
-    this.imagem = this.getRandomImg()
+    this.imagem = this.getRandomImg();
+    this.meuNome = this.getRandomName();
   }
   private getRandomColor(): string {
     const letters = '0123456789ABCDEF';
@@ -30,13 +31,15 @@ export class HelloWordComponent {
     return color;
   }
 
-  private getRandomImg():string{
-    var img = 'https://picsum.photos/200/300';
-
+  private getRandomImg(): string {
+    var img = `https://picsum.photos/200/300?random=${Math.random()}`;
     return img;
   }
-  // private getRandomName():string{
 
-  // }
+  private getRandomName(): string {
+    const names = ["Alice", "Bob", "Carol", "David", "Eve", "Frank", "Grace", "Heidi", "Ivan", "Judy"];
+    const randomIndex = Math.floor(Math.random() * names.length);
+    return names[randomIndex];
+}
 
 }
