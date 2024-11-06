@@ -4,6 +4,10 @@
  
  <!-- version 17 up -->
 <!-- <app-hello-word/> -->
+
 <!-- <app-hello-word meuNome="Melo"/> -->
 <app-hello-word [meuNome]="nomeDinamico"/>
-<app-contador/>
+<!-- [] - receber info () - emitir info -->
+<app-contador (foiAlterado)="quandoFoiAlterado($event)"/>
+<p>Contador Pai:</p>
+ <b>:{{contadorPai}}</b>

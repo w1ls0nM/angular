@@ -11,6 +11,28 @@ import { ContadorComponent } from './contador/contador.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'projectAngular';
-  nomeDinamico = 'Celo';
+  // str: string ='';
+  // num: number = 0;
+  // boll: boolean = true;
+  // // todos o types que não sejam predifinidos são objetos
+  // obj: object = {};
+  // arr: object = [];
+  // und: undefined;
+  // nulo: null = null;
+
+  // str2: string | null = null;
+  // num2: number | undefined;
+  // varr: 'ola' | 'mundo' = 'ola';
+
+  // title = 'projectAngular';
+  // nomeDinamico = 'Celo';
+
+  title: string = 'projectAngular';
+  nomeDinamico: string = 'Celo';
+  contadorPai: number = 0;
+
+  // valor:dataType
+  quandoFoiAlterado(valor:number){
+    this.contadorPai = valor;
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-contador',
@@ -9,15 +9,19 @@ import { Component, Input } from '@angular/core';
 })
 export class ContadorComponent {
 @Input() contador = 0;
+@Output() foiAlterado = new EventEmitter();
 
 incrementar (){
   this.contador++;
+  this.foiAlterado.emit(this.contador);
 }
 
 decrementar (){
   if(this.contador > 0)
   {
     this.contador--;
+    
+    this.foiAlterado.emit(this.contador);
   }
   
 }
