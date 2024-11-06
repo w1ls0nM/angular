@@ -9,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrl: './ngloop.component.scss'
 })
 export class NgloopComponent {
+  arr:Array<number> = [1,2,3,4,5,6]
 
+  frutas:Array<string> =[
+    'maça',
+    'manga',
+    'Morango'
+  ]
 }

@@ -1,3 +1,42 @@
 <p>ngloop works!</p>
 <h1>Loops</h1>
 
+<h2>*ngFor</h2>
+<div>
+    <h3>numeros</h3>
+    <ul>
+        <li *ngFor="let item of arr">
+            {{item}}
+        </li>
+    </ul>
+</div>
+<div>
+    <h3>fruta</h3>
+    <ul>
+        <li *ngFor="let fruta of frutas; last as ultimo">
+            
+        
+            @if(ultimo){
+                <p style="color: brown;">{{fruta}}</p>
+            }@else {
+                <p>{{fruta}}:{{ultimo}} </p>
+            }
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h3>arroba fruta</h3>
+    <ul>
+        @for (fruta of frutas; track $index) {
+            <li>
+                @if($last){
+                    <p style="color: brown;">{{fruta}}</p>
+                }@else {
+                    <p>{{fruta}}:{{$last}} </p>
+                }
+            </li>
+        }
+        
+    </ul>
+</div>
