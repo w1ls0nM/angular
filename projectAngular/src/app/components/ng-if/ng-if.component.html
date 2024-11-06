@@ -1,14 +1,63 @@
-<p>ng-if works!</p>
-{{num}}
-<h1>Diretiva condicional</h1>
+<!-- <p>ng-if works!</p>
+{{num}} -->
+<h1>estruturas condicional</h1>
 
-<h2>*ngIf</h2>
+<!-- <h2>*ngIf</h2>
 
 <div>
     <h3>
         IF
     </h3>
     <div>
-        <p **ngIf="num >= 0"> Valor maior ou 0</p>
+        <p *ngIf="num >= 0"> Valor maior ou 0</p>
     </div>
+</div> -->
+<h3>
+    if
+</h3>
+<div> 
+    <p *ngIf="num > 0; else seNaoBlock"> Valor maior 0</p>
+    <ng-template #seNaoBlock> 
+        <p *ngIf="num < 0; else seNaoBlock_2"> Valor menor 0</p>
+        <ng-template #seNaoBlock_2>
+            valor igual 0
+        </ng-template>
+        
+    </ng-template>
+   
+</div>
+
+<h2>
+    arroba if
+</h2>
+<div>
+    @if (num > 0) {
+        <p>Valor maior 0</p>
+    }@else if (num < 0) {
+        <p>valor menor 0</p>
+    }@else {
+        <p>valor igual 0</p>
+    }
+</div>
+
+<h2>switch case</h2>
+<div [ngSwitch]="true">
+<p *ngSwitchCase="num > 0"> valor maior 0</p>
+<p *ngSwitchCase="num < 0"> valor menor 0</p>
+<p *ngSwitchDefault> valor igual 0</p>
+</div>
+
+<h2>arroba switch case</h2>
+<div>
+    @switch (num) {
+        @case ( 1) {
+            <p>valor igual 1</p>
+        }
+        @case ( -1) {
+            <p>valor igual -1</p>
+        }
+        @default {
+            <p>diferente de 1 e -1</p>
+        }
+    }
 </div>

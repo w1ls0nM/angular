@@ -9,5 +9,15 @@ import { Component } from '@angular/core';
   styleUrl: './ng-if.component.scss'
 })
 export class NgIFComponent {
-num: number= 0;
+num: number= -1;
+
+
+fun(){
+  // if(this.num>=0)
+    // console.log(' > 0')
+  // else if()
+    // console.log(' > 0')
+  // else
+  // console.log(' > 0')
+}
 }

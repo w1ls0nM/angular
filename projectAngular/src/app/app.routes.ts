@@ -14,7 +14,7 @@ export const routes: Routes = [
         path:'contador' , component: ContadorComponent
     },
     {
-        path: 'Ngif', component:NgIFComponent
+        path: 'ngIf', component:NgIFComponent
     },
     {
         path: '', redirectTo:'/contador' , pathMatch:'full'
