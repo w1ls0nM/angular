@@ -1,0 +1,12 @@
+nav {
+animation: anima 1s ;
+}
+
+@keyframes anima {
+    from { background-color: aqua;}
+    to {background-color: rgb(191, 228, 240);}
+}
+
+.linkAtivo {
+    color:blue;
+}

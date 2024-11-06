@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { HelloWordComponent } from './hello-word/hello-word.component';
 import { ContadorComponent } from './contador/contador.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HelloWordComponent, ContadorComponent],
+  imports: [
+    RouterOutlet,
+     HelloWordComponent,
+      ContadorComponent,
+       RouterLink,
+       RouterLinkActive
+      ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
