@@ -31,6 +31,6 @@ export class AnimaisService {
     
     // return this.animais;
     //best pratic clone the object
-    return {... this.animais};
+    return [... this.animais];
    }
 }
