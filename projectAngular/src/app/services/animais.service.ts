@@ -1,36 +1,26 @@
 import { Injectable } from '@angular/core';
+import { Animal } from '../models/animal';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AnimaisService {
-  private animais:Array<any> = [
-    {
-      id:1,
-      nome:'LauLau',
-      especie:'cão'
-    },
-    {
-      id:2,
-      nome:'LauLau2',
-      especie:'coelho'
-    },
-    {
-      id:3,
-      nome:'LauLau3',
-      especie:'cavalo'
-    }
-    
-  ];
-  constructor() {
+  private animais:Array<Animal> = [];
+
+  //HttpClient almenta as promices
+  constructor(private http: HttpClient) {
     console.log('AnimaisService.constructor()')
    }
 
-   getAnimais():Array<any>{
+   getAnimais():Observable<any>{
 
     
     // return this.animais;
     //best pratic clone the object
-    return [... this.animais];
+    //return [... this.animais];
+
+    return 
    }
 }
