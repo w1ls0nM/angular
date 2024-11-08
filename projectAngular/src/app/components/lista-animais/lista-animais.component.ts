@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { AnimaisService } from '../../services/animais.service';
 
 @Component({
   selector: 'app-lista-animais',
@@ -8,23 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './lista-animais.component.scss'
 })
 export class ListaAnimaisComponent {
-  animais:Array<any> = [
-    {
-      id:1,
-      nome:'LauLau',
-      especie:'cão'
-    },
-    {
-      id:2,
-      nome:'LauLau2',
-      especie:'coelho'
-    },
-    {
-      id:3,
-      nome:'LauLau3',
-      especie:'cavalo'
-    }
-    
-  ];
+  animais:Array<any> = [];
 
+  animaisService = inject (AnimaisService)
 }
