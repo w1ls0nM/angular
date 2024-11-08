@@ -25,6 +25,12 @@ export const routes: Routes = [
     {
         path: 'ngloop', component:NgloopComponent
     },
+
+
+
+
+
+    
     {
         path: '', redirectTo:'/contador' , pathMatch:'full'
     },
