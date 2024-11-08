@@ -12,4 +12,6 @@ export class ListaAnimaisComponent {
   animais:Array<any> = [];
 
   animaisService = inject (AnimaisService)
+  //old version
+  // constructor(private animaisService: AnimaisService){}
 }
