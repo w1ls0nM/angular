@@ -29,6 +29,8 @@ export class AnimaisService {
    getAnimais():Array<any>{
 
     
-    return this.animais;
+    // return this.animais;
+    //best pratic clone the object
+    return {... this.animais};
    }
 }
