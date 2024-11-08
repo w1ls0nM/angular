@@ -1,1 +1,11 @@
-<p>lista-animais works!</p>
+<p>Lista animais</p>
+
+<div class="Lista">
+    @for (animal of animais; track animal.id) {
+    <div class="Cartao">
+        <h3>{{animal.nome}}
+            <small>(#{{animal.id}})</small> </h3>
+        <p>Espécie: {{animal.especie}}</p>
+    </div>
+}
+</div>
