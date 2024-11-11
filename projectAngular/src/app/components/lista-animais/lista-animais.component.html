@@ -1,11 +1,14 @@
-<p>Lista animais</p>
+<p>Hello Word RouteContador</p>
 
-<div class="Lista">
-    @for (animal of animais; track animal.id) {
-    <div class="Cartao">
-        <h3>{{animal.nome}}
-            <small>(#{{animal.id}})</small> </h3>
-        <p>Espécie: {{animal.especie}}</p>
+<div class="CarouselContainer">
+    <button class="CarouselButton left" (click)="scrollLeft()">‹</button>
+    <div class="Carousel" #carousel>
+        <div *ngFor="let animal of animais" class="Cartao">
+            <div class="CartaoContent" [routerLink]="'/animalDetalhes/' + animal.id">
+                <h3>{{animal.nome}} <small>(#{{animal.id}})</small></h3>
+                <p>Espécie: {{animal.especie}}</p>
+            </div>
+        </div>
     </div>
-}
+    <button class="CarouselButton right" (click)="scrollRight()">›</button>
 </div>

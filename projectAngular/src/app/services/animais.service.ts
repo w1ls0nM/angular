@@ -21,6 +21,16 @@ export class AnimaisService {
     //best pratic clone the object
     //return [... this.animais];
 
-    return 
+    return this.http.get('http://localhost:3000/animais')
+   }
+
+   getAnimal(id:string):Observable<any>{
+
+    
+    // return this.animais;
+    //best pratic clone the object
+    //return [... this.animais];
+
+    return this.http.get('http://localhost:3000/animais/' + id)
    }
 }

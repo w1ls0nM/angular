@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { HelloWordComponent } from './hello-word/hello-word.component';
 import { ContadorComponent } from './contador/contador.component';
+import { CommonModule } from '@angular/common'; 
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ import { ContadorComponent } from './contador/contador.component';
      HelloWordComponent,
       ContadorComponent,
        RouterLink,
-       RouterLinkActive
+       RouterLinkActive, 
+       CommonModule
       ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
