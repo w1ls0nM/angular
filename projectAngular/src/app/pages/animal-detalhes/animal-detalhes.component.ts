@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { AnimaisService } from '../../services/animais.service';
 import { Animal } from '../../models/animal';
 
@@ -12,11 +12,12 @@ import { Animal } from '../../models/animal';
 })
 export class AnimalDetalhesComponent {
   animal: Animal | undefined;
-constructor(private route: ActivatedRoute,
-  private animaisService: AnimaisService
-){
 
-}
+constructor(
+  private route: ActivatedRoute,
+  private animaisService: AnimaisService,
+  private router:Router
+){}
 
 ngOnInit(){
   console.log(this.route.snapshot.paramMap.get('id'));
@@ -31,5 +32,11 @@ ngOnInit(){
       console.error('algo errado' , error);
     }
   })
+
+  
 }
+goToUpdateAnimal(){
+  this.router.navigate(['animais','upadte', this.animal?.id]);
+}
+
 }

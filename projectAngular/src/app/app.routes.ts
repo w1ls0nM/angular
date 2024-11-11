@@ -7,6 +7,7 @@ import { NgloopComponent } from './components/ngloop/ngloop.component';
 import { ListaAnimaisComponent } from './components/lista-animais/lista-animais.component';
 import { AnimalComponent } from './pages/animal/animal.component';
 import { AnimalDetalhesComponent } from './pages/animal-detalhes/animal-detalhes.component';
+import { UpdateAnimalComponent } from './page/update-animal/update-animal.component';
 
 export const routes: Routes = [
     
@@ -18,7 +19,10 @@ export const routes: Routes = [
         path:'contador' , component: ContadorComponent
     },
     {
-        path:'animais' , component: AnimalComponent
+        path:'animais' ,children:[
+            {path:'' ,component: AnimalComponent},
+            { path: 'update/id', component:UpdateAnimalComponent}
+        ]
     },
     {
         path: 'ngIf', component:NgIFComponent
@@ -29,6 +33,7 @@ export const routes: Routes = [
     {
         path: 'animalDetalhes/:id', component:AnimalDetalhesComponent
     },
+
 
 
 
